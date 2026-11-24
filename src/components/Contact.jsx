@@ -10,7 +10,7 @@ import {
   CheckCircle2,
   Copy,
   Sparkles,
-  ExternalLink,
+  AlertCircle,
 } from "lucide-react";
 
 export default function Contact() {
@@ -24,7 +24,9 @@ export default function Contact() {
   });
 
   const [copiedField, setCopiedField] = useState(null);
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const serviceOptions = [
     "Document & Data Entry",
@@ -40,19 +42,31 @@ export default function Contact() {
     setTimeout(() => setCopiedField(null), 2000);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-  };
+    setSubmitting(true);
+    setErrorMsg("");
 
-  const buildMailtoLink = () => {
-    const subject = encodeURIComponent(
-      `VA Inquiry (${formState.serviceNeeded}) from ${formState.name}`
-    );
-    const body = encodeURIComponent(
-      `Hi Clariza,\n\nName: ${formState.name}\nEmail: ${formState.email}\nSupport Needed: ${formState.serviceNeeded}\n\n${formState.message}`
-    );
-    return `mailto:${personal.email}?subject=${subject}&body=${body}`;
+    try {
+      const res = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        setErrorMsg(data.error || "Unable to send inquiry. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+
+      setSubmitting(false);
+      setSubmitted(true);
+    } catch {
+      setErrorMsg("Network error. Please try again or email Clariza directly.");
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -165,7 +179,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right: Interactive Inquiry Form */}
+          {/* Right: Live Inquiry Form (Saves to Clariza's Inquiries Dashboard) */}
           <div className="lg:col-span-7 exec-card rounded-3xl p-6 sm:p-8">
             {submitted ? (
               <div className="text-center py-8 space-y-4">
@@ -173,20 +187,13 @@ export default function Contact() {
                   <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">
-                  Ready to Send, {formState.name}!
+                  Inquiry Sent, {formState.name}!
                 </h3>
                 <p className="text-slate-600 text-sm max-w-md mx-auto">
-                  Click below to open your email app with your message pre-filled to{" "}
-                  <span className="font-semibold text-teal-700">{personal.email}</span>.
+                  Your message has been delivered to Clariza Diaz Merza&apos;s inbox. She will reply to{" "}
+                  <span className="font-semibold text-teal-700">{formState.email}</span> shortly.
                 </p>
-                <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-                  <a
-                    href={buildMailtoLink()}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-teal-700 hover:bg-teal-800 text-white font-semibold text-sm shadow-md transition-all"
-                  >
-                    <span>Open in Email App</span>
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={() => {
@@ -198,9 +205,9 @@ export default function Contact() {
                         message: "",
                       });
                     }}
-                    className="px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold transition-colors cursor-pointer"
+                    className="px-6 py-3 rounded-full bg-slate-900 hover:bg-teal-700 text-white text-sm font-semibold transition-colors cursor-pointer"
                   >
-                    Write Another
+                    Send Another Inquiry
                   </button>
                 </div>
               </div>
@@ -283,11 +290,19 @@ export default function Contact() {
                   />
                 </div>
 
+                {errorMsg && (
+                  <div className="flex items-center gap-2 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-medium">
+                    <AlertCircle className="w-4 h-4 shrink-0" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-slate-900 hover:bg-teal-700 text-white font-semibold text-sm shadow-lg shadow-slate-900/15 hover:shadow-teal-900/20 transition-all cursor-pointer"
+                  disabled={submitting}
+                  className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-full bg-slate-900 hover:bg-teal-700 text-white font-semibold text-sm shadow-lg shadow-slate-900/15 hover:shadow-teal-900/20 transition-all disabled:opacity-60 cursor-pointer"
                 >
-                  <span>Prepare Inquiry Email</span>
+                  <span>{submitting ? "Sending Inquiry..." : "Send Inquiry"}</span>
                   <Send className="w-4 h-4" />
                 </button>
               </form>

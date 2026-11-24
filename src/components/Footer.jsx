@@ -1,7 +1,8 @@
 "use client";
 
 import { portfolioData } from "@/data/portfolioData";
-import { ArrowUp, Mail, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowUp, Mail, Phone, Lock } from "lucide-react";
 
 export default function Footer() {
   const { personal } = portfolioData;
@@ -62,9 +63,18 @@ export default function Footer() {
 
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-2">
           <p>© 2026 {personal.name}. All rights reserved.</p>
-          <p>
-            {personal.email} | {personal.phone}
-          </p>
+          <div className="flex items-center gap-4">
+            <span>
+              {personal.email} | {personal.phone}
+            </span>
+            <Link
+              href="/inquiries"
+              className="inline-flex items-center gap-1 text-slate-400 hover:text-teal-400 transition-colors font-medium"
+            >
+              <Lock className="w-3 h-3" />
+              <span>Inquiries Inbox</span>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
