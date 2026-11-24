@@ -4,6 +4,13 @@ export const metadata = {
   title: "Clariza Diaz Merza | Administrative Virtual Assistant",
   description:
     "Portfolio of Clariza Diaz Merza — Administrative Virtual Assistant offering reliable administrative support, document preparation, spreadsheet maintenance, file organization, email support, and invoicing.",
+  icons: {
+    icon: [
+      { url: "/clariza-logo.png", type: "image/png" },
+    ],
+    shortcut: "/clariza-logo.png",
+    apple: "/clariza-logo.png",
+  },
   keywords: [
     "Clariza Diaz Merza",
     "Clariza Merza",
