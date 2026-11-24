@@ -93,6 +93,18 @@ export const portfolioData = {
       role: "Time Tracking & Updates",
       category: "Accountability",
     },
+    {
+      id: "xero",
+      name: "Xero",
+      role: "Invoicing & Bookkeeping",
+      category: "Finance",
+    },
+    {
+      id: "formitive",
+      name: "Formitive",
+      role: "Forms & Workflows",
+      category: "Operations",
+    },
   ],
 
   services: [

@@ -31,7 +31,7 @@ export default function ToolsPlatforms() {
           </div>
 
           {/* 3D Interactive Pop-Out Logo Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 perspective-1000">
+          <div className="flex flex-wrap justify-center gap-4 perspective-1000">
             {toolsAndPlatforms.map((tool) => {
               const LogoComponent = toolLogoMap[tool.id] || WordIcon;
               return (
@@ -40,7 +40,7 @@ export default function ToolsPlatforms() {
                   maxTilt={15}
                   scale={1.06}
                   glare={true}
-                  className="exec-card rounded-2xl p-5 flex flex-col items-center text-center group cursor-pointer"
+                  className="exec-card rounded-2xl p-5 w-[calc(50%-0.5rem)] sm:w-[calc(33.333%-0.75rem)] md:w-[calc(25%-0.75rem)] lg:w-[190px] flex flex-col items-center text-center group cursor-pointer"
                 >
                   <div className="depth-md w-14 h-14 rounded-2xl bg-[#FAF9F6] border border-slate-200/80 flex items-center justify-center mb-3.5 shadow-md group-hover:bg-white group-hover:shadow-lg transition-all duration-300">
                     <LogoComponent className="w-9 h-9" />
