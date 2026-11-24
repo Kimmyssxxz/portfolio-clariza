@@ -30,7 +30,7 @@ export const portfolioData = {
     quickFacts: [
       { label: "Role", value: "Administrative Virtual Assistant" },
       { label: "Focus", value: "Admin Support, Documentation, Invoicing" },
-      { label: "Education", value: "BA in English Language (MinSU)" },
+      { label: "Education", value: "AB English Language (Mindoro State University)" },
       { label: "Location", value: "Philippines" },
       { label: "Work Setup", value: "Remote (Local & International)" },
       { label: "Time Tracking", value: "Hubstaff" },
@@ -187,7 +187,7 @@ export const portfolioData = {
   ],
 
   education: {
-    degree: "Bachelor of Arts in English Language",
+    degree: "AB English Language",
     institution: "Mindoro State University",
     note: "Strong foundation in written communication, documentation, and clear correspondence.",
   },

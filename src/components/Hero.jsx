@@ -151,10 +151,10 @@ export default function Hero() {
                 </div>
                 <div>
                   <span className="text-xs font-bold text-slate-900 block">
-                    BA English Language
+                    AB English Language
                   </span>
                   <span className="text-[10px] text-slate-500 font-medium">
-                    Mindoro State Univ.
+                    Mindoro State University
                   </span>
                 </div>
               </div>
