@@ -100,8 +100,8 @@ export const portfolioData = {
       category: "Finance",
     },
     {
-      id: "formitive",
-      name: "Formitive",
+      id: "formitize",
+      name: "Formitize",
       role: "Forms & Workflows",
       category: "Operations",
     },

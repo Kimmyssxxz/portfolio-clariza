@@ -94,14 +94,14 @@ export function XeroIcon({ className = "w-9 h-9" }) {
   );
 }
 
-export function FormitiveIcon({ className = "w-9 h-9" }) {
+export function FormitizeIcon({ className = "w-9 h-9" }) {
   return (
     <svg viewBox="0 0 24 24" width="36" height="36" className={className} fill="none">
-      <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#formitive-grad)" />
+      <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#formitize-grad)" />
       <path d="M7 7.5h10M7 11.5h6.5M7 15.5h4.5" stroke="#fff" strokeWidth="1.9" strokeLinecap="round" />
       <path d="M13.8 15.2l1.6 1.6 3.1-3.3" stroke="#5EEAD4" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" />
       <defs>
-        <linearGradient id="formitive-grad" x1="2" y1="2" x2="22" y2="22">
+        <linearGradient id="formitize-grad" x1="2" y1="2" x2="22" y2="22">
           <stop stopColor="#0F766E" />
           <stop offset="1" stopColor="#2563EB" />
         </linearGradient>
@@ -119,5 +119,5 @@ export const toolLogoMap = {
   "gmail": GmailIcon,
   "hubstaff": HubstaffIcon,
   "xero": XeroIcon,
-  "formitive": FormitiveIcon,
+  "formitize": FormitizeIcon,
 };
