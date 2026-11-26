@@ -5,7 +5,7 @@ export const portfolioData = {
     initials: "CM",
     title: "Administrative Virtual Assistant",
     tagline: "Administrative Support • Documentation • Invoicing",
-    bio: "Organized and detail-oriented administrative support professional with hands-on exposure to office operations, budget-related clerical tasks, and public-service documentation—currently training in virtual administration and invoicing.",
+    bio: "Organized and detail-oriented administrative support professional with hands-on exposure to office operations, budget-related clerical tasks, public-service documentation, and virtual administration & invoicing support.",
     location: "Philippines (Local & International Remote)",
     email: "clarizamerza4@gmail.com",
     phone: "0931 959 5602",
@@ -18,7 +18,7 @@ export const portfolioData = {
 
   about: {
     summary:
-      "I provide developing administrative support skills shaped by office-based experience, budget clerical work, and current training in virtual administration and invoicing. I enjoy keeping information organized, preparing clear documents, and helping routine processes run smoothly for local businesses and international clients remotely.",
+      "I provide dependable administrative support skills shaped by office-based experience, budget clerical work, and hands-on virtual administration and invoicing support. I enjoy keeping information organized, preparing clear documents, and helping routine processes run smoothly for local businesses and international clients remotely.",
     workStyle: [
       "Reliable",
       "Detail-oriented",
@@ -43,7 +43,7 @@ export const portfolioData = {
     "Document preparation & formatting",
     "File & records organization",
     "Email communication & inbox support",
-    "Invoice & billing support (training)",
+    "Invoice & billing support",
     "Budget documentation support",
     "Accuracy & attention to detail",
     "Time tracking & task accountability",
@@ -154,15 +154,15 @@ export const portfolioData = {
 
   experience: [
     {
-      company: "Virtual Administration & Invoicing Training",
-      role: "VA Administration & Invoicing Officer Trainee",
+      company: "Virtual Administration & Invoicing Support",
+      role: "VA Administration & Invoicing Officer Support",
       period: "Current",
       achievements: [
-        "Completing training in administrative virtual assistance and invoicing workflows.",
-        "Building familiarity with digital task management, accurate record updates, and professional email communication.",
-        "Developing consistent processes for organizing information and supporting administrative operations.",
+        "Providing reliable support in administrative virtual assistance and invoicing workflows.",
+        "Handling digital task management, accurate record updates, and professional email communication.",
+        "Maintaining consistent processes for organizing information and supporting daily administrative operations.",
       ],
-      tags: ["Virtual Admin", "Invoicing", "Hubstaff", "Email Support"],
+      tags: ["Virtual Admin", "Invoicing", "Xero", "Formitize", "Hubstaff", "Email Support"],
     },
     {
       company: "Budget & Office Documentation",
