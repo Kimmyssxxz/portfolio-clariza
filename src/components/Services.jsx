@@ -9,6 +9,7 @@ import {
   FolderKanban,
   Mail,
   Receipt,
+  CreditCard,
   ClipboardCheck,
   Clock,
   Sparkles,
@@ -24,6 +25,7 @@ export default function Services() {
     FolderKanban,
     Mail,
     Receipt,
+    CreditCard,
     ClipboardCheck,
     Clock,
   };

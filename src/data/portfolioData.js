@@ -139,6 +139,12 @@ export const portfolioData = {
       iconName: "Receipt",
     },
     {
+      id: "payment-reconciliation",
+      title: "Payment Monitoring & Reconciliation",
+      desc: "Tracking incoming payments and matching records accurately.",
+      iconName: "CreditCard",
+    },
+    {
       id: "checklists-records",
       title: "Checklists & Record Keeping",
       desc: "Administrative checklists and organized records.",

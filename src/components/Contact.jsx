@@ -33,6 +33,7 @@ export default function Contact() {
     "File Organization",
     "Email & Inbox Support",
     "Invoice Tracking Support",
+    "Payment Monitoring & Reconciliation",
     "General Admin VA",
   ];
 
